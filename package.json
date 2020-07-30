@@ -1,0 +1,35 @@
+{
+	"name": "hafas-find-departures-duration-limit",
+	"description": "Find the duration limit of a HAFAS endpoint's departures method.",
+	"version": "1.0.0",
+	"main": "index.js",
+	"files": [
+		"index.js",
+		"example.js"
+	],
+	"keywords": [
+		"hafas",
+		"hafas-client"
+	],
+	"author": "Jannis R <mail@jannisr.de>",
+	"homepage": "https://github.com/derhuerst/hafas-find-departures-duration-limit",
+	"repository": "derhuerst/hafas-find-departures-duration-limit",
+	"bugs": "https://github.com/derhuerst/hafas-find-departures-duration-limit/issues",
+	"license": "ISC",
+	"engines": {
+		"node": ">=12"
+	},
+	"dependencies": {
+		"debug": "^4.1.1"
+	},
+	"devDependencies": {
+		"hafas-client": "^5.6.3"
+	},
+	"peerDependencies": {
+		"hafas-client": "^5.6.3"
+	},
+	"scripts": {
+		"test": "node example.js",
+		"prepublishOnly": "npm test"
+	}
+}
