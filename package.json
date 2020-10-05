@@ -1,7 +1,7 @@
 {
 	"name": "hafas-find-departures-duration-limit",
 	"description": "Find the duration limit of a HAFAS endpoint's departures method.",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"main": "index.js",
 	"files": [
 		"index.js",
@@ -30,7 +30,7 @@
 		"hafas-client": "^5.6.3"
 	},
 	"scripts": {
-		"test": "node example.js",
+		"test": "env DEBUG=hafas-find-departures-duration-limit node test.js",
 		"lint": "eslint .",
 		"prepublishOnly": "npm run lint && npm test"
 	}

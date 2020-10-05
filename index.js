@@ -8,14 +8,20 @@ const durationLimits = new WeakMap()
 
 // This function finds *any* high-enough duration that seems to "touch"
 // the HAFAS-dictated limit of departures() results.
-const findDeparturesDurationLimit = async (hafas, station) => {
+const findDeparturesDurationLimit = async (hafas, station, opt = {}) => {
+	const {
+		when,
+	} = {
+		when: new Date().toISOString(),
+		...opt,
+	}
 	if (durationLimits.has(hafas)) {
 		debug('re-using previously determined duration limit')
 		return durationLimits.get(hafas)
 	}
 
 	const testWith = async (duration) => {
-		const opt = {duration, results: Infinity}
+		const opt = {duration, results: Infinity, when}
 		const results = (await hafas.departures(station, opt)).length
 		debug(`hafas.departures() with ${duration}:`, results, 'results')
 		return results

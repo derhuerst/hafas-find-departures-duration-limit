@@ -6,7 +6,8 @@ const findDepsDurationLimit = require('.')
 const MAX_DURATION = 1440 // 1440min = 24h
 
 const mockedDepartures = async (stop, opt = {}) => {
-	const {duration, results: maxResults} = opt
+	const {duration, results: maxResults, when} = opt
+	if (!('when' in opt)) throw new Error('missing opt.when')
 	const results = Math.min(2 * Math.min(duration, MAX_DURATION), maxResults)
 	return new Array(results).fill(null)
 }
