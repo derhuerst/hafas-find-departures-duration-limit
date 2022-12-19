@@ -22,7 +22,10 @@ const findDeparturesDurationLimit = async (hafas, station, opt = {}) => {
 
 	const testWith = async (duration) => {
 		const opt = {duration, results: Infinity, when}
-		const results = (await hafas.departures(station, opt)).length
+		const res = await hafas.departures(station, opt)
+		const results = 'object' === typeof res && Array.isArray(res.departures)
+			? res.departures.length
+			: res.length
 		debug(`hafas.departures() with ${duration}:`, results, 'results')
 		return results
 	}

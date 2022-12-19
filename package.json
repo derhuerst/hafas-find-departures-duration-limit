@@ -27,7 +27,7 @@
 		"hafas-client": "^5.6.3"
 	},
 	"peerDependencies": {
-		"hafas-client": "^5.6.3"
+		"hafas-client": "^5.6 || ^6"
 	},
 	"scripts": {
 		"test": "env DEBUG=hafas-find-departures-duration-limit node test.js",
