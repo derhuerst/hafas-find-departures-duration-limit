@@ -3,7 +3,6 @@
 **Find the duration limit of a HAFAS endpoint's departures method.**
 
 [![npm version](https://img.shields.io/npm/v/hafas-find-departures-duration-limit.svg)](https://www.npmjs.com/package/hafas-find-departures-duration-limit)
-[![build status](https://api.travis-ci.org/derhuerst/hafas-find-departures-duration-limit.svg?branch=master)](https://travis-ci.org/derhuerst/hafas-find-departures-duration-limit)
 ![ISC-licensed](https://img.shields.io/github/license/derhuerst/hafas-find-departures-duration-limit.svg)
 ![minimum Node.js version](https://img.shields.io/node/v/hafas-find-departures-duration-limit.svg)
 [![chat with me on Gitter](https://img.shields.io/badge/chat%20with%20me-on%20gitter-512e92.svg)](https://gitter.im/derhuerst)
