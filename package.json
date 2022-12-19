@@ -1,7 +1,7 @@
 {
 	"name": "hafas-find-departures-duration-limit",
 	"description": "Find the duration limit of a HAFAS endpoint's departures method.",
-	"version": "1.0.2",
+	"version": "1.1.0",
 	"main": "index.js",
 	"files": [
 		"index.js",

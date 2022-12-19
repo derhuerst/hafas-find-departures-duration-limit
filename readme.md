@@ -5,7 +5,8 @@
 [![npm version](https://img.shields.io/npm/v/hafas-find-departures-duration-limit.svg)](https://www.npmjs.com/package/hafas-find-departures-duration-limit)
 ![ISC-licensed](https://img.shields.io/github/license/derhuerst/hafas-find-departures-duration-limit.svg)
 ![minimum Node.js version](https://img.shields.io/node/v/hafas-find-departures-duration-limit.svg)
-[![chat with me on Gitter](https://img.shields.io/badge/chat%20with%20me-on%20gitter-512e92.svg)](https://gitter.im/derhuerst)
+[![support me via GitHub Sponsors](https://img.shields.io/badge/support%20me-donate-fa7664.svg)](https://github.com/sponsors/derhuerst)
+[![chat with me on Twitter](https://img.shields.io/badge/chat%20with%20me-on%20Twitter-1da1f2.svg)](https://twitter.com/derhuerst)
 
 Given a [`hafas-client@5`](https://github.com/public-transport/hafas-client/tree/5)-compatible HAFAS client and a stop/station ID, `hafas-find-departures-duration-limit` tries to find the largest duration that the HAFAS endpoint can return departures/arrivals for.
 
