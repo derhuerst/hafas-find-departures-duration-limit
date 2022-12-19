@@ -1,9 +1,15 @@
 'use strict'
 
 const {ok} = require('assert')
+const createHafas = require('hafas-client')
+const dbProfile = require('hafas-client/p/db')
 const findDepsDurationLimit = require('.')
 
+const pkg = require('./package.json')
+
 const MAX_DURATION = 1440 // 1440min = 24h
+
+const hamburgDammtor = '8002548'
 
 const mockedDepartures = async (stop, opt = {}) => {
 	const {duration, results: maxResults, when} = opt
@@ -15,13 +21,19 @@ const mockedHafasClient = {
 	departures: mockedDepartures,
 }
 
-findDepsDurationLimit(mockedHafasClient, '123')
-.then((limit) => {
-	console.info('determined limit:', limit)
+;(async () => {
+	const limit = await findDepsDurationLimit(mockedHafasClient, '123')
 	ok(limit > (MAX_DURATION - 15), 'determined limit is too small')
 	ok(limit < (MAX_DURATION + 15), 'determined limit is too small')
-	console.info('✔︎')
-})
+
+	{
+		const dbHafas = createHafas(dbProfile, pkg.name + ' test')
+		const limit = await findDepsDurationLimit(dbHafas, hamburgDammtor)
+		console.info('DB HAFAS limit:', limit)
+	}
+
+	console.info('✔︎ seems to work')
+})()
 .catch((err) => {
 	console.error(err)
 	process.exit(1)
